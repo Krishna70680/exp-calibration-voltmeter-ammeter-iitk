@@ -14,7 +14,7 @@ Take at least six observations by changing the load up to full scale deflection 
 <li> 
 Calculate percentage error in each case.</li></ol>
 <h5>Calibration of Voltmeter:</h5>
-<ol>
+<ul>
  <li>
    Make the connections as per circuit diagram. </li>
  
@@ -25,4 +25,4 @@ Calculate percentage error in each case.</li></ol>
   <li>Note the readings of testing values and standard values at every step. </li>
  
   <li>Calculate percentage error in each case.</li>
-  </ol>
+  </ul>
