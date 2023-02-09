@@ -20,5 +20,5 @@
 
 SrNo | Name | Faculty or Student | Department| Institute | Email id
 :--|:--|:--|:--|:--|:--|
-1 |Ashutosh Tiwari |Faculty |Applied Science and Humanity |Rajkiya Engineering College Banda |ashutosh.tiwari@recbanda.ac.in
+1 |Ashutosh Tiwari |Faculty |Applied Science and Humanity Department |Rajkiya Engineering College Banda |ashutosh.tiwari@recbanda.ac.in
 2 | | . | . | . | .
