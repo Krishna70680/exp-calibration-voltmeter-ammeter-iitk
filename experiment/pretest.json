@@ -2,29 +2,29 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "An Ammeter is connected in ---------- with the circuit",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Parallel",
+        "b": "Both parallel and series",
+        "c": "series",
+        "d": "None of these"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
         "b": "Explanation 2",
-        "c": "Explanation 2",
+        "c": "An ammeter is connected in series because same current will flow in the circuit to calculate the current it must be connected in series",
         "d": "Explanation 2"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "In a circuit , voltmeter is always connected in ",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Triangular",
+        "b": "Parallel",
+        "c": "Series",
+        "d": " Either series or parallel"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
