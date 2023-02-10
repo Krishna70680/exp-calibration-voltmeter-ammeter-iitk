@@ -5,7 +5,7 @@
  <h3>Calibration of voltmeter:</h3><br>Calibration of Voltmeter is the process of checking the accuracy of the reading of the Voltmeter under <br>test (Vt) by comparing it with the standard 
 Voltmeter (Vs) one.<br> In other words, calibration checks the correctness of the instrument by comparing it with the reference standard
 
-![image](https://user-images.githubusercontent.com/98009042/217732509-6f5fe675-d059-4839-a760-d15bbfdbfb75.png)
+<img src= "images/ex19_1.png" >
 where :    Vt = Test value       Vs = Standard value
 <h3>Calibration of ammeter:</h3><br>
 Calibration of Ammeter is the process of checking the accuracy of the reading of the ammeter under <br>test (At) by comparing it with the standard 
