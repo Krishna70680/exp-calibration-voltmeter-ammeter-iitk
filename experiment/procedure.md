@@ -8,7 +8,7 @@
     The loads have to increase step by step by the single pole switches </li>
   <li>
  
-Take at least six observations by changing the load up to full scale deflection of the givenammeter. </li>
+Take at least six observations by changing the load up to full scale deflection of the given ammeter. </li>
  <li>
    Note the readings of testing values and standard values at every step.</li>
 <li> 
