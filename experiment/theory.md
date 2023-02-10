@@ -14,7 +14,7 @@ Ammeter (As) one. <br>In other words, calibration checks the correctness of the 
 where :    At = Test value       As = Standard value<br>
  <h2>Circuit Diagram.</h2>
 
-![ex19_2](https://user-images.githubusercontent.com/98009042/217733559-7d5be13f-a996-4e14-b8d5-1e1a6ab0f1ed.png)
+<img src="images/ex19_2.png">
 
 
 
