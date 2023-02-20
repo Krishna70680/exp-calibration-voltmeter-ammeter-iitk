@@ -28,6 +28,7 @@
 .control-grp {
     display: flex;
     width: 65%;
+    
     justify-content: center;
     margin-top: 12px;
 
