@@ -1,9 +1,10 @@
-//Your JavaScript goes in here
 
 var c = false;
 var c2 = false;
 var c3 = false;
 var rotate = false;
+
+var load = false;
 var looper;
 var degrees = 0;
 var switchcount = 0;
@@ -16,16 +17,20 @@ e = false;
 // function to turn on the main switch or mcb and give the value of voltage supply to both the voltmeter and ammeter 
 
 function switch1on() {
-	a = document.getElementById('switch1');
+	a1 = document.getElementById('switch1');
 
 	if (c == false) {
-		a.setAttribute('transform', 'translate(0,6)');
-		a.style.transition = 'transform 0.35s';
+		a1.setAttribute('transform', 'translate(0,6)');
+		a1.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
 			bulb1color = document.getElementById('firstbulb').style.fill = 'red';
 			bulb1color = document.getElementById('secondbulb').style.fill = 'red';
+			load = true;
 			// bulb1color = document.getElementById('thirdbulb').style.fill = 'yellow';
 		}
+
+
+
 		// else if (phasecount == 1) {
 		// 	bulb1coloer = document.getElementById('firstbulb').style.fill = 'red';
 		// 	bulb1color = document.getElementById('secondbulb').style.fill = 'yellow';
@@ -54,7 +59,7 @@ function switch1on() {
 		var tableswitch = document.querySelector("#tableswitch");
 		tableswitch.addEventListener('click', () => {
 
-			if (rotate == false) {
+			if (rotate == false && load) {
 				tableswitch.style.transform = "rotate(8deg)";
 				tableswitch.style.transformOrigin = "500px 610px ";
 				tableswitch.style.transition = 'transform 0.5s'
@@ -66,12 +71,13 @@ function switch1on() {
 				rotate = false;
 
 			}
+			return rotate;
 		});
 
 	}
 
 	else if (c == true) {
-		a.setAttribute('transform', 'translate(0,20)');
+		a1.setAttribute('transform', 'translate(0,20)');
 		bulb1color = document.getElementById('firstbulb').style.fill = 'white';
 		bulb1color = document.getElementById('secondbulb').style.fill = 'white';
 		//bulb1color = document.getElementById('thirdbulb').style.fill = 'white';
@@ -84,11 +90,54 @@ function switch1on() {
 		voltageRange.value = 0;
 
 		document.getElementById("voltage-1-display").innerText = voltageRange.value;
+		load = false;
 
 
+		a = document.getElementById('loadswitch1');
+		a2 = document.getElementById('loadswitch2');
+		a3 = document.getElementById('loadswitch3');
+		a4 = document.getElementById('loadswitch4');
+		a5 = document.getElementById('loadswitch5');
+
+		
+
+		{
+			bulb2color = document.querySelectorAll('.loadbulb2');
+			bulb3color = document.querySelectorAll('.loadbulb3');
+			bulb4color = document.querySelectorAll('.loadbulb4');
+			bulb5color = document.querySelectorAll('.loadbulb5');
+
+
+			a.setAttribute('transform', 'translate(-3.9,0)');
+			a2.setAttribute('transform', 'translate(-3.9,0)');
+			a3.setAttribute('transform', 'translate(-3.9,0)');
+			a4.setAttribute('transform', 'translate(-3.9,0)');
+			a5.setAttribute('transform', 'translate(-3.9,0)');
+			bulb1color = document.querySelectorAll('.loadbulb1');
+
+			bulb1color.forEach((val) => {
+				val.style.fill = 'white';
+			})
+			bulb2color.forEach((val) => {
+				val.style.fill = 'white';
+			})
+			bulb3color.forEach((val) => {
+				val.style.fill = 'white';
+			})
+			bulb4color.forEach((val) => {
+				val.style.fill = 'white';
+			})
+			bulb5color.forEach((val) => {
+				val.style.fill = 'white';
+			})
+			c = false;
+			switchcount = 0;
+
+		}
 
 
 	}
+	return load;
 }
 
 
@@ -120,13 +169,15 @@ function getVoltage(id) {
 
 
 
-
+a = document.getElementById('loadswitch1');
 
 // function to turn on the loadswitch button no 1
 function loadswitch1on() {
-	a = document.getElementById('loadswitch1');
 
-	if (c == false) {
+
+
+
+	if (c == false && load && rotate) {
 		a.setAttribute('transform', 'translate(22,-5)');
 		a.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
@@ -138,6 +189,8 @@ function loadswitch1on() {
 		c = true;
 		switchcount = switchcount + 1;
 	}
+
+
 
 
 	else if (c == true) {
@@ -159,14 +212,14 @@ function loadswitch1on() {
 // function to turn on the loadswitch button no 2
 
 function loadswitch2on() {
-	a = document.getElementById('loadswitch2');
+	a2 = document.getElementById('loadswitch2');
 
 	if (c == false) {
-		a.setAttribute('transform', 'translate(22,-5)');
-		a.style.transition = 'transform 0.35s';
+		a2.setAttribute('transform', 'translate(22,-5)');
+		a2.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
-			bulb1color = document.querySelectorAll('.loadbulb2');
-			bulb1color.forEach((val) => {
+			bulb2color = document.querySelectorAll('.loadbulb2');
+			bulb2color.forEach((val) => {
 				val.style.fill = 'red';
 			})
 		}
@@ -176,9 +229,9 @@ function loadswitch2on() {
 
 
 	else if (c == true) {
-		a.setAttribute('transform', 'translate(-3.9,0)');
-		bulb1color = document.querySelectorAll('.loadbulb2');
-		bulb1color.forEach((val) => {
+		a2.setAttribute('transform', 'translate(-3.9,0)');
+		bulb2color = document.querySelectorAll('.loadbulb2');
+		bulb2color.forEach((val) => {
 			val.style.fill = 'white';
 		})
 		c = false;
@@ -190,14 +243,14 @@ function loadswitch2on() {
 
 
 function loadswitch3on() {
-	a = document.getElementById('loadswitch3');
+	a3 = document.getElementById('loadswitch3');
 
 	if (c == false) {
-		a.setAttribute('transform', 'translate(22,-5)');
-		a.style.transition = 'transform 0.35s';
+		a3.setAttribute('transform', 'translate(22,-5)');
+		a3.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
-			bulb1color = document.querySelectorAll('.loadbulb3');
-			bulb1color.forEach(val => {
+			bulb3color = document.querySelectorAll('.loadbulb3');
+			bulb3color.forEach(val => {
 				val.style.fill = 'red';
 			});
 		}
@@ -207,9 +260,9 @@ function loadswitch3on() {
 
 
 	else if (c == true) {
-		a.setAttribute('transform', 'translate(-3.9,0)');
-		bulb1color = document.querySelectorAll('.loadbulb3');
-		bulb1color.forEach(val => {
+		a3.setAttribute('transform', 'translate(-3.9,0)');
+		bulb3color = document.querySelectorAll('.loadbulb3');
+		bulb3color.forEach(val => {
 			val.style.fill = 'white';
 		});
 		c = false;
@@ -220,14 +273,14 @@ function loadswitch3on() {
 // function to turn on the loadswitch button no 4
 
 function loadswitch4on() {
-	a = document.getElementById('loadswitch4');
+	a4 = document.getElementById('loadswitch4');
 
 	if (c == false) {
-		a.setAttribute('transform', 'translate(22,-5)');
-		a.style.transition = 'transform 0.35s';
+		a4.setAttribute('transform', 'translate(22,-5)');
+		a4.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
-			bulb1color = document.querySelectorAll('.loadbulb4');
-			bulb1color.forEach(val => {
+			bulb4color = document.querySelectorAll('.loadbulb4');
+			bulb4color.forEach(val => {
 				val.style.fill = 'red';
 			});
 		}
@@ -237,9 +290,9 @@ function loadswitch4on() {
 
 
 	else if (c == true) {
-		a.setAttribute('transform', 'translate(-3.9,0)');
-		bulb1color = document.querySelectorAll('.loadbulb4');
-		bulb1color.forEach(val => {
+		a4.setAttribute('transform', 'translate(-3.9,0)');
+		bulb4color = document.querySelectorAll('.loadbulb4');
+		bulb4color.forEach(val => {
 			val.style.fill = 'white';
 		});
 		c = false;
@@ -254,14 +307,14 @@ function loadswitch4on() {
 
 // function to turn on the loadswitch button no 5
 function loadswitch5on() {
-	a = document.getElementById('loadswitch5');
+	a5 = document.getElementById('loadswitch5');
 
 	if (c == false) {
-		a.setAttribute('transform', 'translate(22,-5)');
-		a.style.transition = 'transform 0.35s';
+		a5.setAttribute('transform', 'translate(22,-5)');
+		a5.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
-			bulb1color = document.querySelectorAll('.loadbulb5');
-			bulb1color.forEach(val => {
+			bulb5color = document.querySelectorAll('.loadbulb5');
+			bulb5color.forEach(val => {
 				val.style.fill = 'red';
 			});
 		}
@@ -271,9 +324,9 @@ function loadswitch5on() {
 
 
 	else if (c == true) {
-		a.setAttribute('transform', 'translate(-3.9,0)');
-		bulb1color = document.querySelectorAll('.loadbulb5');
-		bulb1color.forEach(val => {
+		a5.setAttribute('transform', 'translate(-3.9,0)');
+		bulb5color = document.querySelectorAll('.loadbulb5');
+		bulb5color.forEach(val => {
 			val.style.fill = 'white';
 		});
 		c = false;
