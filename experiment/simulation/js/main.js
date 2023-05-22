@@ -69,6 +69,47 @@ function switch1on() {
 			else if (rotate == true) {
 				document.getElementById('tableswitch').style.transform = "rotate(54deg)";
 				rotate = false;
+				a = document.getElementById('loadswitch1');
+				a2 = document.getElementById('loadswitch2');
+				a3 = document.getElementById('loadswitch3');
+				a4 = document.getElementById('loadswitch4');
+				a5 = document.getElementById('loadswitch5');
+
+
+
+				{
+					bulb2color = document.querySelectorAll('.loadbulb2');
+					bulb3color = document.querySelectorAll('.loadbulb3');
+					bulb4color = document.querySelectorAll('.loadbulb4');
+					bulb5color = document.querySelectorAll('.loadbulb5');
+
+
+					a.setAttribute('transform', 'translate(-3.9,0)');
+					a2.setAttribute('transform', 'translate(-3.9,0)');
+					a3.setAttribute('transform', 'translate(-3.9,0)');
+					a4.setAttribute('transform', 'translate(-3.9,0)');
+					a5.setAttribute('transform', 'translate(-3.9,0)');
+					bulb1color = document.querySelectorAll('.loadbulb1');
+
+					bulb1color.forEach((val) => {
+						val.style.fill = 'white';
+					})
+					bulb2color.forEach((val) => {
+						val.style.fill = 'white';
+					})
+					bulb3color.forEach((val) => {
+						val.style.fill = 'white';
+					})
+					bulb4color.forEach((val) => {
+						val.style.fill = 'white';
+					})
+					bulb5color.forEach((val) => {
+						val.style.fill = 'white';
+					})
+					c = false;
+					switchcount = 0;
+
+				}
 
 			}
 			return rotate;
@@ -93,47 +134,6 @@ function switch1on() {
 		load = false;
 
 
-		a = document.getElementById('loadswitch1');
-		a2 = document.getElementById('loadswitch2');
-		a3 = document.getElementById('loadswitch3');
-		a4 = document.getElementById('loadswitch4');
-		a5 = document.getElementById('loadswitch5');
-
-		
-
-		{
-			bulb2color = document.querySelectorAll('.loadbulb2');
-			bulb3color = document.querySelectorAll('.loadbulb3');
-			bulb4color = document.querySelectorAll('.loadbulb4');
-			bulb5color = document.querySelectorAll('.loadbulb5');
-
-
-			a.setAttribute('transform', 'translate(-3.9,0)');
-			a2.setAttribute('transform', 'translate(-3.9,0)');
-			a3.setAttribute('transform', 'translate(-3.9,0)');
-			a4.setAttribute('transform', 'translate(-3.9,0)');
-			a5.setAttribute('transform', 'translate(-3.9,0)');
-			bulb1color = document.querySelectorAll('.loadbulb1');
-
-			bulb1color.forEach((val) => {
-				val.style.fill = 'white';
-			})
-			bulb2color.forEach((val) => {
-				val.style.fill = 'white';
-			})
-			bulb3color.forEach((val) => {
-				val.style.fill = 'white';
-			})
-			bulb4color.forEach((val) => {
-				val.style.fill = 'white';
-			})
-			bulb5color.forEach((val) => {
-				val.style.fill = 'white';
-			})
-			c = false;
-			switchcount = 0;
-
-		}
 
 
 	}
@@ -158,15 +158,6 @@ function getVoltage(id) {
 	}
 
 }
-
-
-
-
-
-
-
-
-
 
 
 a = document.getElementById('loadswitch1');
@@ -214,7 +205,7 @@ function loadswitch1on() {
 function loadswitch2on() {
 	a2 = document.getElementById('loadswitch2');
 
-	if (c == false) {
+	if (c == false && load && rotate) {
 		a2.setAttribute('transform', 'translate(22,-5)');
 		a2.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
@@ -245,7 +236,7 @@ function loadswitch2on() {
 function loadswitch3on() {
 	a3 = document.getElementById('loadswitch3');
 
-	if (c == false) {
+	if (c == false && load && rotate) {
 		a3.setAttribute('transform', 'translate(22,-5)');
 		a3.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
@@ -275,7 +266,7 @@ function loadswitch3on() {
 function loadswitch4on() {
 	a4 = document.getElementById('loadswitch4');
 
-	if (c == false) {
+	if (c == false && load && rotate) {
 		a4.setAttribute('transform', 'translate(22,-5)');
 		a4.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
@@ -309,7 +300,7 @@ function loadswitch4on() {
 function loadswitch5on() {
 	a5 = document.getElementById('loadswitch5');
 
-	if (c == false) {
+	if (c == false && load && rotate) {
 		a5.setAttribute('transform', 'translate(22,-5)');
 		a5.style.transition = 'transform 0.35s';
 		if (phasecount == 0) {
