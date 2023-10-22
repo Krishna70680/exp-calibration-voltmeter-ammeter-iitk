@@ -1,6 +1,6 @@
 .svgclass {
   height: auto;
-  border: 4px solid rgb(24, 139, 77);
+  border: 80px solid rgb(232, 241, 237);
   border-radius: 70px;
   margin-top: 20px;
   margin-bottom: 0px;
@@ -8,16 +8,19 @@
   margin-right: 100px;
   padding: 20px;
   box-shadow: 2px 2px 5px 4px black;
+  /* width:; */
+  /* height: 600px; */
+
 }
 
 .sidepanel {
-  width: 0;
+  width: 30px;
   position: fixed;
   z-index: 1;
   height: 50px;
   top: 0;
   right: 0;
-  background-color: #47f0d4;
+  background-color: #f27746;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 30x;
@@ -49,7 +52,7 @@
   font-size: 36px;
 }
 
-.openbtn {
+/* .openbtn {
   font-size: 20px;
   cursor: pointer;
   background-color: #e14545;
@@ -60,6 +63,27 @@
 
 .openbtn:hover {
   background-color: #444;
+} */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  animation: blink 1s alternate infinite;
+}
+
+.openbtn:hover {
+  background-color: #e14545;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #e14545; /* Initial background color */
+  }
+  100% {
+    background-color: #2e2ca3; /* Final background color */
+  }
 }
 
 li {
@@ -90,12 +114,12 @@ li {
   margin-top: 5px;
   margin-left: 40px;
   width: 40%;
-  border: 2px solid black;
+  border: 2px solid rgb(10, 10, 10);
 
 }
 
 td {
-  background-color: #96D4D4;
+  background-color: #5bb4b4;
 }
 
 td {
@@ -107,9 +131,9 @@ input {
 }
 
 .slider {
-  width: 150px;
-  color: rgb(190, 255, 13);
-  border: 2px solid black;
+  width: 300px;
+  color: rgb(160, 45, 131);
+  border: 2px solid rgb(0, 0, 0);
 }
 
 #input {
@@ -128,3 +152,138 @@ input {
 .control-grp input[type="range"] {
   width: 100px;
 }
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: auto;
+  background-color: rgb(223, 230, 228);
+}
+
+th {
+  font-size: 1.5em;
+  padding: 5px 6px 4px 5px;
+  text-align: left;
+  /* background-color: rgb(247, 148, 118); */
+  background-color: #4babb8;
+}
+
+td {
+  border: 0px;
+  font-size: 25px;
+}
+
+
+/* #thickness2 {
+  width: 200px;
+  margin: 10px auto;
+} */
+
+.customers input {
+  /* max-width: 130px; */
+  width: 100%;
+}
+
+
+
+#btn-add {
+  width: 160px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #3c5013;
+  color: white;
+  cursor: pointer;
+  font-size: larger;
+  font-weight: bolder;
+
+}
+.text-3d {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #050404; /* Text color */
+  -webkit-text-stroke: 2px #20341d; /* Text stroke for 3D effect */
+}
+
+.st2 {
+  fill: #8C7D63; /* Base fill color */
+
+  /* Spot color effect using a filter */
+  filter: drop-shadow(0 0 8px #111111); /* 8px red shadow */
+}
+
+.st82 {
+  fill: #E3F5FF; /* Initial fill color */
+
+  /* Hover effect */
+  transition: fill 0.3s ease; /* Smooth transition over 0.3 seconds */
+
+  /* Change the fill color on hover */
+}
+
+.st82:hover {
+  fill: #FF0000; /* New fill color when hovering */
+}
+
+.st42 {
+  fill: #E3F5FF; /* Initial fill color */
+
+  /* Hover effect */
+  transition: fill 0.3s ease; /* Smooth transition over 0.3 seconds */
+
+  /* Change the fill color on hover */
+}
+
+.st42:hover {
+  fill: #e23737; /* New fill color when hovering */
+}
+
+.st29 {
+  fill: #E3F5FF; /* Initial fill color */
+
+  /* Hover effect */
+  transition: fill 0.3s ease; /* Smooth transition over 0.3 seconds */
+
+  /* Change the fill color on hover */
+}
+
+.st29:hover {
+  fill: #FF0000; /* New fill color when hovering */
+}
+
+.control-grp {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #e3f5ff; /* Track background color */
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: rgb(11, 11, 10); /* Slider thumb color */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+span {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #00f; /* Label color */
+}
+
+
