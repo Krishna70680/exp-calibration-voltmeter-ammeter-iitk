@@ -21,4 +21,4 @@
 SrNo | Name | Faculty or Student | Department| Institute | Email id
 :--|:--|:--|:--|:--|:--|
 1 |Ashutosh Tiwari |Faculty |Applied Science and Humanity Department |Rajkiya Engineering College Banda |ashutosh.tiwari@recbanda.ac.in
-2 |Adarsh |Student |Information Technology |Rajkiya Engineering College Banda |Adarshsingh2508@gmail.com
+2 |Nishnat Pandey |Student |Mechanical Engineeering |Rajkiya Engineering College Banda |nishpand01@gmail.com
