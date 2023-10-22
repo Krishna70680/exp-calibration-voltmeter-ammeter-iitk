@@ -1,4 +1,4 @@
-
+// 381 line is for the roatation  of needele of standard and tested ammeter 
 var c = false;
 var c2 = false;
 var c3 = false;
@@ -18,7 +18,7 @@ e = false;
 
 function switch1on() {
 	a1 = document.getElementById('switch1');
-
+         
 	if (c == false) {
 		a1.setAttribute('transform', 'translate(0,6)');
 		a1.style.transition = 'transform 0.35s';
@@ -42,7 +42,7 @@ function switch1on() {
 		switchcount = switchcount + 1;
 		loadcount = loadcount + 1;
 
-
+// testred voltmeter and voltmeter
 		const voltageRange = document.getElementById("voltage1");
 		voltageRange.disabled = false;
 		voltageRange.addEventListener("input", function () {
@@ -56,14 +56,17 @@ function switch1on() {
 			voltageRange.disabled = false;
 		});
 
+
+
 		var tableswitch = document.querySelector("#tableswitch");
 		tableswitch.addEventListener('click', () => {
-
+			
 			if (rotate == false && load) {
 				tableswitch.style.transform = "rotate(8deg)";
 				tableswitch.style.transformOrigin = "500px 610px ";
 				tableswitch.style.transition = 'transform 0.5s'
 				rotate = true;
+
 
 			}
 			else if (rotate == true) {
@@ -110,8 +113,27 @@ function switch1on() {
 					switchcount = 0;
 
 				}
+				// -------------------------- ammeter rotation tends to zeror ,function ------------------------------------
+			let ammeterRotate = () => {
+				
+				taneedle.style.transition = 'transform 2s';
+				taneedle.style.transformOrigin = "377.81px 417.11px";
+			
+				saneedle.style.transform = (`rotate(${0}deg)`);
+				taneedle.style.transform = (`rotate(${0}deg)`);
+				
+				saneedle.style.transition = 'transform 2s';
+				saneedle.style.transformOrigin = "569.54px 409.86px";
+			}
+			ammeterRotate()
 
 			}
+			var stammeter1=document.getElementById("stammeter");
+			stammeter1.innerHTML = '0 A';
+			var testammeter1=document.getElementById("test-ammeter");
+			testammeter1.innerHTML = '0 A';
+			
+
 			return rotate;
 		});
 
@@ -166,7 +188,7 @@ a = document.getElementById('loadswitch1');
 function loadswitch1on() {
 
 
-
+	
 
 	if (c == false && load && rotate) {
 		a.setAttribute('transform', 'translate(22,-5)');
@@ -179,6 +201,9 @@ function loadswitch1on() {
 		}
 		c = true;
 		switchcount = switchcount + 1;
+	// 	e=1;
+	// console.log(e)
+	z1=1
 	}
 
 
@@ -192,8 +217,13 @@ function loadswitch1on() {
 		})
 		c = false;
 		switchcount = 0;
-
+    //     e=0;
+	// console.log(e)
+	z1=0
 	}
+	
+	changeValStammeter()
+	
 }
 
 
@@ -216,6 +246,7 @@ function loadswitch2on() {
 		}
 		c = true;
 		switchcount = switchcount + 1;
+		z2=1
 	}
 
 
@@ -227,8 +258,10 @@ function loadswitch2on() {
 		})
 		c = false;
 		switchcount = 0;
+		z2=0;
 
 	}
+	changeValStammeter()
 }
 // function to turn on the loadswitch button no 3
 
@@ -247,6 +280,7 @@ function loadswitch3on() {
 		}
 		c = true;
 		switchcount = switchcount + 1;
+		z3 = 1;
 	}
 
 
@@ -258,8 +292,10 @@ function loadswitch3on() {
 		});
 		c = false;
 		switchcount = 0;
+		z3 = 0;
 
 	}
+	changeValStammeter()
 }
 // function to turn on the loadswitch button no 4
 
@@ -277,6 +313,7 @@ function loadswitch4on() {
 		}
 		c = true;
 		switchcount = switchcount + 1;
+		z4 = 1;
 	}
 
 
@@ -288,12 +325,11 @@ function loadswitch4on() {
 		});
 		c = false;
 		switchcount = 0;
+		z4 = 0;
 
 	}
+	changeValStammeter()
 }
-
-
-
 
 
 // function to turn on the loadswitch button no 5
@@ -311,6 +347,7 @@ function loadswitch5on() {
 		}
 		c = true;
 		switchcount = switchcount + 1;
+		z5 = 1;
 	}
 
 
@@ -322,24 +359,193 @@ function loadswitch5on() {
 		});
 		c = false;
 		switchcount = 0;
+		z5 = 0;
 
 	}
+	changeValStammeter()
 }
 
 
 
-// function to rotate the needle of test-ammeter
-// function tstammeterneedlefunc() {
-// 	if (rotate == false) {
-// 		document.getElementById('tstammeterneedle').style.transform = "rotate(5deg)";
-// 		document.getElementById('tstammeterneedle').style.transformOrigin = "515px 580px";
-// 		document.getElementById('tstammeterneedle').style.transition = 'transform 0.5s'
-// 		rotate = true;
-// 	}
-// 	else if (rotate == true) {
-// 		document.getElementById('tstammeterneedle').style.transform = "rotate(0deg)";
-// 		rotate = false;
-// 	}
+
+
+
+var loadswitch1=document.getElementById("loadswitch1");
+var loadswitch2 = document.getElementById("loadswitch2"); 
+var loadswitch3 = document.getElementById("loadswitch3"); 
+var loadswitch4 = document.getElementById("loadswitch4"); 
+var loadswitch5 = document.getElementById("loadswitch5");
+var loadswitch5 = document.getElementById("voltage1");
+var stammeter=document.getElementById("stammeter");
+var testammeter=document.getElementById("test-ammeter");
+var z1 =0;
+var z2 = 0;
+var z3 = 0;
+var z4 =  0;
+var z5 = 0;
+function changeValStammeter(){
+  var sliderVal1 = document.getElementById('voltage1').value
+  if(z1 || z2 || z3 || z4 || z5){
+	stammeter.innerHTML = (sliderVal1/((z1+z2+z3+z4+z5)*100)).toFixed(3) + ' A'; 
+	var randomValue = -0.001 - Math.random() * 0.0010;
+	testammeter.innerHTML = (sliderVal1/((z1+z2+z3+z4+z5)*100)+randomValue).toFixed(4) + ' A';
+  }else{
+	stammeter.innerHTML = 0 + ' A'; 
+	testammeter.innerHTML=0 + ' A'; 
+  }
+    
+  let ammeterRotate = () => {
+	// console.log(e.target.value)
+
+	const ammeterVal  = (stammeter.innerHTML ).split(" ")[0]
+	console.log(ammeterVal)
+	var blurValue=ammeterVal*22;
+	taneedle.style.transform = (`rotate(${blurValue}deg)`);
+	// taneedle.style.transform = ('rotate(60deg)');
+	taneedle.style.transition = 'transform 2s';
+	taneedle.style.transformOrigin = "377.81px 417.11px";
+
+	saneedle.style.transform = (`rotate(${blurValue}deg)`);
+	// saneedle.style.transform = ('rotate(60deg)');
+	saneedle.style.transition = 'transform 3s';
+	saneedle.style.transformOrigin = "569.54px 409.86px";
+}
+ammeterRotate()
+
+}
+
+var addnew_row = document.getElementById("addnewRow");
+// x.style.display = 'none';
+let btnAdd = document.getElementById('btn-add');
+
+btnAdd.addEventListener('click',()=>{
+  console.log("hhhhhhh")
+  addnew_row.innerHTML += ` <tr>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+
+</tr>`
+})
+
+// needle rotate code through the if else statements
+
+// var stvneedle=document.getElementById('stvneedle')
+// var fadeRang=document.getElementById('voltage1')
+// var tvneedle=document.getElementById('tvneedle')
+
+//     fadeRang.addEventListener('input', (e) => {
+// 		console.log(e.target.value)
+    
+//       if(e.target.value<=200){
+// 		stvneedle.style.transform = ('rotate(30deg)');
+//         stvneedle.style.transition = 'transform 2s';
+        
+// 		stvneedle.style.transformOrigin = "550.5px 228.94px";
+// 		tvneedle.style.transform = ('rotate(30deg)');
+// tvneedle.style.transition = 'transform 2s';
+// tvneedle.style.transformOrigin = "364.86px 218.27px";
+        
+   
+//       }else{
+//         stvneedle.style.transform = ('rotate(60deg)');
+// stvneedle.style.transition = 'transform 2s';
+// stvneedle.style.transformOrigin = "550.5px 228.94px";
+
+// tvneedle.style.transform = ('rotate(60deg)');
+// tvneedle.style.transition = 'transform 2s';
+// tvneedle.style.transformOrigin = "364.86px 218.27px";
+//       }
+      
+//     });
+// var taneedle=document.getElementById('taneedle');
+// var saneedle=document.getElementById('saneedle');
+// fadeRang.addEventListener('input', (e) => {
+// 	console.log(e.target.value)
+// 	if(10<e.target.value<=200){
+// 		taneedle.style.transform = ('rotate(30deg)');
+//         taneedle.style.transition = 'transform 2s';
+       
+// 		taneedle.style.transformOrigin = "377.81px 417.11px";
+
+// 		saneedle.style.transform = ('rotate(30deg)');
+//         saneedle.style.transition = 'transform 2s';
+// 		saneedle.style.transformOrigin = "569.54px 409.86px";
+// 		console.log('anand')
 // }
+	 
+// 	  else{
+//         taneedle.style.transform = ('rotate(60deg)');
+//         taneedle.style.transition = 'transform 2s';
+// 		taneedle.style.transformOrigin = "377.81px 417.11px";
+
+// 		saneedle.style.transform = ('rotate(60deg)');
+//         saneedle.style.transition = 'transform 2s';
+// 		saneedle.style.transformOrigin = "569.54px 409.86px";
+
+		
+//       }
+      
+//     });
+
+
+//rotation of needle standard and tested ammeter through the function below here 
+
+// var taneedle=document.getElementById('taneedle')
+// var fadeRang=document.getElementById('voltage1')
+// var saneedle=document.getElementById('saneedle')
+
+//     fadeRang.addEventListener('input', (e) => {
+// 		console.log(e.target.value)
+// 		var blurValue=e.target.value/3.5;
+// 		taneedle.style.transform = (`rotate(${blurValue}deg)`);
+// 		// taneedle.style.transform = ('rotate(60deg)');
+//         taneedle.style.transition = 'transform 2s';
+// 		taneedle.style.transformOrigin = "377.81px 417.11px";
+
+// 		saneedle.style.transform = (`rotate(${blurValue}deg)`);
+//         // saneedle.style.transform = ('rotate(60deg)');
+//         saneedle.style.transition = 'transform 2s';
+// 		saneedle.style.transformOrigin = "569.54px 409.86px";
+// 	})
+
+
+	// standarad voltmeter and tested voltmeter rotation function
+
+	var stvneedle=document.getElementById('stvneedle')
+var fadeRang=document.getElementById('voltage1')
+    var tvneedle=document.getElementById('tvneedle')
+
+	fadeRang.addEventListener('input', (e) => {
+		console.log(e.target.value)
+		var blurValue=e.target.value/4.2;
+		stvneedle.style.transform = (`rotate(${blurValue}deg)`);
+        stvneedle.style.transition = 'transform 2s';
+		stvneedle.style.transformOrigin = "550.5px 228.94px";
+
+		tvneedle.style.transform = (`rotate(${blurValue}deg)`);
+        tvneedle.style.transition = 'transform 2s';
+        tvneedle.style.transformOrigin = "364.86px 218.27px";
+	})
+
+	
+
+	
+	
+
+
+
+
+
+
+
 
 
