@@ -429,9 +429,7 @@ btnAdd.addEventListener('click',()=>{
   <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
   <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
   <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
-  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
-  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
-  <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
+  
 
 </tr>`
 })
