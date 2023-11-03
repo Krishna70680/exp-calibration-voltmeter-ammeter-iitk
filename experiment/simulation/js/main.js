@@ -14,6 +14,30 @@ voltage1 = 0;
 Current = 0;
 Speed = 0;
 e = false;
+
+
+
+
+
+
+
+
+
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "500px";
+    document.getElementById("mySidepanel").style.height = "100%";
+   }
+   
+   function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+   }
+
+
+
+
+
+
+
 // function to turn on the main switch or mcb and give the value of voltage supply to both the voltmeter and ammeter 
 
 function switch1on() {
@@ -429,7 +453,7 @@ btnAdd.addEventListener('click',()=>{
   <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
   <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
   <th><input type="text" style="padding: 6px 8px ;width:'50px';"></th>
-  
+
 
 </tr>`
 })
@@ -534,6 +558,18 @@ var fadeRang=document.getElementById('voltage1')
         tvneedle.style.transformOrigin = "364.86px 218.27px";
 	})
 
+
+	function printTable() {
+		var table = document.getElementById("addnewRow");
+		var win = window.open('', '', 'height=700,width=700');
+		win.document.write('<html><head>');
+		win.document.write('<title>Table</title>');
+		win.document.write('</head>');
+		win.document.write('<body>');
+		win.document.write(table.outerHTML);
+		win.document.write('</body></html>');
+		win.print();
+	  }
 	
 
 	
